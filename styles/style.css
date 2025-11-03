@@ -2,4 +2,382 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--page-bg-image);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg-color);  
+  z-index: 0;
+}
+.header{
+  padding: var(--small-padding);
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+.REC{
+  display: var(--REC);
+  position: absolute;
+  top: var(--small-padding);
+  right: 38px;
+  width: 33px;
+  height: 26px;
+}
+.REC::before{
+  content: 'REC'; 
+  position: absolute;
+  font-family: var(--font), sans-serif;
+  font-weight: var(--small-font-size);
+  font-size: var(--regular-font-size);
+  line-height: 25px;
+  text-align: center;
+  color: var(--REC-color);
+}
+.REC::after{
+  content: '';
+  position: absolute;
+  top: 8px;  
+  right: -18px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--REC-color);
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 2px  var(--REC-color);
+}
+.decorated-zone::before{
+  content: '';
+  position: absolute;
+  width: var(--rectangle-size);
+  height: var(--rectangle-size);
+  bottom: var(--small-padding);
+  left: var(--small-padding);
+  border-left: 1px solid var(--func-color);
+  border-bottom: 1px solid var(--func-color);
+  box-sizing: border-box;
+}
+.decorated-zone::after{
+  content: '';
+  position: absolute;
+  width: var(--rectangle-size);
+  height: var(--rectangle-size);
+  top: var(--small-padding);
+  right: var(--small-padding);
+  border-right: 1px solid var(--func-color);
+  border-top: 1px solid var(--func-color);
+  box-sizing: border-box;
+}
+.header__theme-menu{
+  justify-self: end;
+  align-self: center;
+  width: 70px;
+  height: 98px;
+}
+.header__theme-menu-list{
+  display: grid;
+  gap: 15px;
+}
+.header__theme-menu-button{
+  padding: 2px 13px;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: lowercase;
+  color: var(--func-color);
+  font-size: var(--regular-font-size);
+  font-family: var(--font) , sans-serif;
+  font-weight: var(--small-font-size);
+  line-height: 18px;
+  text-align: center;
+  border: none;
+}
+.header__theme-menu-button:hover{
+  padding-top: -1px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--func-color);
+}
+.header__theme-menu-button:focus-visible{
+  outline: 1px solid var(--func-color); 
+  border-bottom: none;
+}
+.header__theme-menu-button_active{
+  outline: 1px solid var(--func-color);
+  border-bottom:  none;
+  pointer-events: none
+}
+.header__title{
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-family: var(--font), sans-serif;
+  font-weight: var(--large-font-weight);
+  font-style: Bold;
+  line-height: 83%;
+  text-transform: lowercase;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);  
+  align-self: end;
+}
+.header__subtitle {
+  font-family: var(--font), sans-serif;
+  font-weight: var(--large-font-weight);
+  font-style: Bold;
+  font-size: var(--regular-font-size);
+  line-height: 23.4px;
+  width: 355px;
+  margin-top: 55px;
+}
+.title-decor{
+  display: block;
+  background-color: var(--accent-color);
+  color: #000028;
+  height: fit-content;
+}
+.content{
+  margin-top: 30px;
+  height: fit-content;
+}
+.content, .footer{
+  background-color: var(--bg-color);
+  position: relative;
+  z-index: 1;
+  padding: var(--small-padding);
+  font-family: var(--font), sans-serif;
+}
+.section:has(.paragraph){
+  margin-bottom: 50px;
+}
+.section__title{
+  font-weight: var(--large-font-weight);
+  font-style: Bold;
+  font-size:var(--regular-font-size);
+  line-height: 23.4px;
+  color: var(--func-color);
+  margin-bottom: 20px;
+}
+.paragraph__title{
+  margin-bottom: 10px;
+  font-weight: var(--large-font-weight);
+  font-size:var(--regular-font-size);
+  line-height: 23.4px;
+}
+.paragraph__content{
+  padding-right: 4px ;
+  font-weight: var(--small-font-size);
+  font-size:var(--regular-font-size);
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+.paragraph__subtitle{
+  margin: 20px 0px;
+  font-weight: var(--large-font-weight);
+  font-size:var(--regular-font-size);
+  line-height: 23.4px;
+}
+.text__link a{
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+a:hover{
+  border-bottom: 1px solid var(--text-color);
+}
+a:focus-visible{
+  outline: 1px solid var(--text-color);
+}
+.section:has(.gallery){
+  margin-bottom: 30px;
+}
+.gallery__images{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--small-padding);
+}
+.gallery__image{
+  display: block;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 100%;
+}
+.footer{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__title{
+  align-self: center;
+  font-weight: var(--large-font-weight);
+  font-style: Bold;
+  font-size: 116px;
+  line-height: 83%;
+  letter-spacing: 0%;
+  text-transform: lowercase;
+  color:var(--title-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (width >= 768px){
+  :root{
+    --small-padding: 20px
+  }
+  .header{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+  }
+  .header__title{
+    margin-left: -20px;
+    grid-column: span 2;
+  }
+  .header__theme-menu{
+    grid-column: 2;
+  }
+  .header__subtitle{
+    margin-top: 0;
+    width: 100%;
+    grid-column: 2;
+    align-self: center;
+  }
+  .REC{
+    right: 48px;
+    }
+  .questions{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 40px;
+  }
+  .questions .section__title{ 
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    grid-column: 1;
+    grid-row: 1 / -1;
+  }
+  .questions .paragraph{
+    grid-column: 2 / 4;
+    grid-row: auto / auto;
+    margin-bottom: 0px;
+  }
+  .questions .paragraph-content{
+    grid-column: 2 / 4;
+    grid-row: 1/ 3;
+  }
+  .reasons{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  .reasons .section__title{
+    width: 236px;
+    margin-bottom: 19px;
+    grid-column: 1;
+    grid-row: 1 ;
+  }
+  .reasons .paragraph{
+    grid-column: 1/4;
+  }
+  .questions .paragraph-content{
+    grid-column: 1 / 4;
+    grid-row: 2 / auto;
+  }
+  .methods{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+  }
+  .methods .section__title{
+    word-wrap: break-word;
+    grid-column: 1;
+    grid-row: 1 ;
+  }
+  .methods .paragraph{
+    grid-column: 2 ;
+  }
+  .methods .paragraph__subtitle {
+    margin-top: 0px;
+  }
+  .section:has(.gallery){
+    padding-top: 10px;
+    margin-bottom: 40px;
+  }
+  .gallery .paragraph__title{
+    margin-bottom: 20px ;
+  }
+  .gallery__images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .gallery__images :nth-child(1){
+    grid-column: span 2;
+    grid-row: 1;
+  }
+  .gallery__images :nth-child(2){
+    grid-row: span 2;
+  }
+  .gallery__images :nth-child(3){
+    grid-row: span 2;
+    object-fit: cover;
+  }
+  .gallery__images :nth-child(5){
+    grid-column: span 2;
+  }
+  .footer__title{
+    letter-spacing: 2px;
+  }
+}
+@media(width>=1024px){
+  .header{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content 1fr;
+  }
+  .header__theme-menu{
+    grid-column: span 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: center;
+  }
+  .header__theme-menu-list{
+    display: flex;
+    justify-content: center;
+    gap: 10px
+  }
+  .header__title{
+    font-size: 157px;
+  }
+  .questions{
+    column-gap: 20px;
+    grid-template-rows: min-content min-content;
+  }
+  .reasons{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: min-content auto;
+    column-gap: 20px;
+  }
+  .reasons .paragraph{
+    grid-column: unset;
+    grid-row: 2;
+  }
+  .reasons .paragraph__content{
+    margin-bottom: 0;
+  }
+  .reasons .section__title{
+    width: auto;
+    margin-bottom: 20px;
+    grid-row: 1;
+  }
+  .methods{
+    padding-top: 6px;
+    column-gap: 10px;
+  }
+  .footer__title{
+    font-size: 157px;
+    letter-spacing: 0;
+  }
 }
