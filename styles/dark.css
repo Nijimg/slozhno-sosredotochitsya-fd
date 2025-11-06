@@ -10,7 +10,7 @@
   --title-color: #DB00ff;
   --text-color: #F1B2CE;
   --func-color: #FF0070 ;
-  --REC:block
+  --rec:block
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -20,6 +20,6 @@
   --title-color: #DB00ff;
   --text-color: #F1B2CE;  
   --func-color: #FF0070 ;
-  --REC: block;
+  --rec: block;
   }
 }

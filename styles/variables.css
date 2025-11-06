@@ -13,9 +13,10 @@
   --large-font-weight: 700;
   --rectangle-size: 25px; 
   --font: 'IBM Plex Mono';
-  --REC-color: var(--accent-color);
+  --rec-color: var(--accent-color);
   --func-color: var(--accent-color);
   --small-padding: 10px;
-  --REC: block;
+  --rec: block;
+  --text-title-color: #000028;
 }
 
