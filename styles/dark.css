@@ -10,7 +10,8 @@
   --title-color: #DB00ff;
   --text-color: #F1B2CE;
   --func-color: #FF0070 ;
-  --rec:block
+  --rec: block;
+  --button-hover: rgba(255, 0, 112, 0.4);
 }
 @media (prefers-color-scheme: dark) {
   :root{
@@ -21,5 +22,6 @@
   --text-color: #F1B2CE;  
   --func-color: #FF0070 ;
   --rec: block;
+  --button-hover: rgba(255, 0, 112, 0.4);
   }
 }
